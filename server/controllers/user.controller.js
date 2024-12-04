@@ -1,7 +1,6 @@
 'use strict';
 const _ = require('lodash');
 const request = require('../system/libraries/request');
-const moment = require('moment-timezone');
 const constant = require('../constant');
 
 class UserController {
@@ -32,7 +31,6 @@ class UserController {
           regionalVicePresident: dimensionValue.regionalVicePresident,
           salesManager: dimensionValue.salesManager,
           rOMs: dimensionValue.rOMs,
-
         }
       });
       userDetail.divisionDetail = _.uniqBy(userDetail.divisionDetail, 'divisionId');
@@ -77,8 +75,7 @@ class UserController {
         throw new Exception('ValidationError', 'Please provide access token');
       }
       let dotIoUserDetail = await getDotIoCurrantUser(accessToken);
-      let isComsense = false;
-      console.info('dotIoUserDetail : ', dotIoUserDetail);
+      // console.info('dotIoUserDetail : ', dotIoUserDetail);
       let dimensionValuesUserDetail = await UserController.getDimensionValuesDivisionDetail(accessToken, dotIoUserDetail.displayName);
       // let userType = await UserController.getUserType(dimensionValuesUserDetail, dotIoUserDetail.cn, connection);
       let userDetail = await createLocalUser(connection, dotIoUserDetail, accessToken, dimensionValuesUserDetail);
@@ -99,7 +96,7 @@ class UserController {
         }
       });
       userDetail.divisionDetail = _.uniqBy(userDetail.divisionDetail, 'divisionId');
-      console.info('userDetail : ', userDetail);
+      // console.info('userDetail : ', userDetail);
       if (connection) {
         connection.release();
         connection = null;
@@ -113,13 +110,6 @@ class UserController {
       }
       res.sendError(err);
     }
-  }
-
-  static async getUserType(dimensionValuesUserDetail, connection, userGroup) {
-    let paylocityEmployeeId = dimensionValuesUserDetail && dimensionValuesUserDetail.length > 0 && dimensionValuesUserDetail[0].employeeId ? dimensionValuesUserDetail[0].employeeId : undefined;
-    console.log('dimensionValuesUserDetail : ', dimensionValuesUserDetail);
-    let userType = [];
-    return userType;
   }
 
   static async getDimensionValuesDivisionDetail(accessToken, cn) {
@@ -168,15 +158,15 @@ function getUserApplicationGroup(allGroups) {
 
 async function createLocalUser(connection, dotIoUserDetail, accessToken, dimensionValuesUserDetail) {
   try {
-    let paylocityEmployeeId = dimensionValuesUserDetail && dimensionValuesUserDetail.length > 0 && dimensionValuesUserDetail[0].employeeId ? dimensionValuesUserDetail[0].employeeId : undefined;
+    // let paylocityEmployeeId = dimensionValuesUserDetail && dimensionValuesUserDetail.length > 0 && dimensionValuesUserDetail[0].employeeId ? dimensionValuesUserDetail[0].employeeId : undefined;
     let userCondition = `id=${dotIoUserDetail.id}`;
     let [user] = await global.models.User.getUser(connection, userCondition);
     let userGroup = getUserApplicationGroup(dotIoUserDetail.userGroup);
-    let userType = await UserController.getUserType(dimensionValuesUserDetail, connection, userGroup);
-    userType = userType.toString() + ',' + userGroup;
-    console.log('user : ', user);
-    console.log('userGroup : ', userGroup);
-    console.log('userType : ', userType);
+    // let userType = await UserController.getUserType(dimensionValuesUserDetail, connection, userGroup);
+    let userType = userGroup;
+    // console.log('user : ', user);
+    // console.log('userGroup : ', userGroup);
+    // console.log('userType : ', userType);
 
     if (dotIoUserDetail.displayName && constant.allPermissionUserList.indexOf(dotIoUserDetail.displayName) > -1) {
       let groupType = [global.config.adGroupNames.divisionChangeNotificationUserGroup];
@@ -203,8 +193,8 @@ async function createLocalUser(connection, dotIoUserDetail, accessToken, dimensi
         createdAt: currantTime(),
         updatedAt: currantTime()
       };
-      console.log('dotIoUserDetail.memberOf', dotIoUserDetail.memberOf);
-      console.log('createObj.userGroup', createObj.userGroup);
+      // console.log('dotIoUserDetail.memberOf', dotIoUserDetail.memberOf);
+      // console.log('createObj.userGroup', createObj.userGroup);
       return await global.models.User.create(connection, createObj);
     } else {
       let updateUserObj = {};
@@ -236,7 +226,7 @@ async function createLocalUser(connection, dotIoUserDetail, accessToken, dimensi
         updateUserObj.divisionId = dotIoUserDetail.divisionNumber;
       }
 
-      console.log('dotIoUserDetail.userGroup : ', dotIoUserDetail.userGroup);
+      // console.log('dotIoUserDetail.userGroup : ', dotIoUserDetail.userGroup);
       if (user.userGroup !== userGroup) {
         updateUserObj.userGroup = userGroup;
       }
@@ -253,7 +243,7 @@ async function createLocalUser(connection, dotIoUserDetail, accessToken, dimensi
       let condition = `id=${dotIoUserDetail.id}`;
       let updatedUserDetail = await global.models.User.update(connection, updateUserObj, condition);
       let [userData] = await global.models.User.getUser(connection, condition);
-      console.log('updated user detail : ', userData);
+      // console.log('updated user detail : ', userData);
       return userData;
     }
   } catch (error) {
