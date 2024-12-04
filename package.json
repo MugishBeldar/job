@@ -1,0 +1,50 @@
+{
+  "name": "job",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1376.0",
+    "axios": "^1.4.0",
+    "bfj": "^6.1.1",
+    "classlist.js": "^1.1.20150312",
+    "co-body": "^6.0.0",
+    "csvtojson": "^2.0.8",
+    "ejs": "3.1.7",
+    "ftps": "^1.2.0",
+    "json2csv": "^6.0.0-alpha.2",
+    "lodash": "^4.17.11",
+    "mailparser": "^3.6.5",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.33",
+    "multiparty": "^4.2.1",
+    "mysql2": "^3.10.0",
+    "node-sass": "^8.0.0",
+    "nodemailer": "^6.7.8",
+    "q": "^1.5.1",
+    "sequelize": "^6.23.0",
+    "ssh2-sftp-client": "^9.1.0",
+    "umzug": "^2.3.0",
+    "url-pattern": "^1.0.3",
+    "uuid": "^3.3.2",
+    "winston": "^3.8.2",
+    "zone.js": "~0.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mugish-Rapidops/Job.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mugish-Rapidops/Job/issues"
+  },
+  "homepage": "https://github.com/Mugish-Rapidops/Job#readme",
+  "engines": {
+    "node": "18.10.0",
+    "npm": "8.19.2"
+  }
+}

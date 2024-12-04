@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Control_Total>
+	<Associated_File_Id>101082020</Associated_File_Id>
+	<File_Name>COM_101082020</File_Name>
+	<Dollar_Amount>1,358,090.39</Dollar_Amount>
+</Control_Total>

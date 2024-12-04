@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+</style>
+<body style="background:#F2F5FA; margin:0; padding:0;">
+<table cellpadding="0" cellspacing="0" border="0" width="800px" align="center">
+    <tr>
+        <td>
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                    <td colspan="2" height="20"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" height="20"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                    <td colspan="2" valign="middle" >
+                        <a href="#"><img style="width: 110px" src="https://capexapp.cookandboardman.io/capex/api/v1/images?image=dark_logo.png" alt=""></a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                    <td colspan="2" height="20"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table cellpadding="0" cellspacing="0" border="0" width="100%"
+                   style="background:#fff; border-radius:10px; padding:15px; box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);">
+                <tr>
+                    <td height="15"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <% for (let data of mismatchData) { %>
+                        <table style="width:100%; border:1px solid #d5d5d5; padding: 10px; margin-bottom: 15px;">
+                            <tr>
+                                    <td width="20%" style="font-weight: bold">Brand</td>
+                                    <td width="30%"><%= data.brandName %></td>
+                                    <td width="20%" style="font-weight: bold">Type</td>
+                                    <td width="30%"><%= data.divisionType %></td>
+                            </tr>
+                            <tr>
+                                    <td width="20%" style="font-weight: bold">Div</td>
+                                    <td width="30%"><%= data.divisionId %></td>
+                                    <td width="20%" style="font-weight: bold">Name</td>
+                                    <td width="30%"><%= data.divisionName %></td>
+                            </tr>
+
+                            <tr>
+                                    <td width="20%" style="font-weight: bold">Address</td>
+                                     <td width="30%"><%= data.businessCentralDivisionDetail.address1 %></td>
+                                    <td width="20%" style="font-weight: bold">Address 2</td>
+                                    <td width="30%"><%= data.businessCentralDivisionDetail.address2 %></td>
+                            </tr>
+
+                            <tr>
+                                    <td width="20%" style="font-weight: bold">City</td>
+                                    <td width="30%"><%= data.businessCentralDivisionDetail.city %></td>
+                                    <td width="20%" style="font-weight: bold">State</td>
+                                    <td width="30%"><%= data.businessCentralDivisionDetail.state %></td>
+                            </tr>
+
+                            <tr>
+                                    <td width="20%" style="font-weight: bold">Zip</td>
+                                    <td width="30%"><%= data.businessCentralDivisionDetail.zip %></td>
+                                    <td width="20%" style="font-weight: bold">Phone</td>
+                                    <td width="30%"><%= data.businessCentralDivisionDetail.phone %></td>
+                            </tr>
+                            <tr>
+                                <td width="20%" style="font-weight: bold">Date changed in BC</td>
+                                <td width="30%"><%= data.dateChangeInBC %></td>
+                                <td width="20%" style="font-weight: bold">Action</td>
+                                <td width="30%"><%= data.action %> Division</td>
+                            </tr>
+                            <tr>
+                                <td width="20%"></td>
+                                <td align="right" width="30%">
+                                    <a href="<%= data.redirectUrl %>"
+                                       style="background:#124370; font-weight:500;display: inline-block; border-radius:4px; color:#fff; margin-right: 7px; padding:8px 18px; font-size:14px; text-decoration:none; border-color: #124370;">View</a>
+                                </td>
+                                <td width="20%"></td>
+                                <td width="30%"></td>
+
+                            </tr>
+                        </table>
+                        <% } %>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        <a href="<%= applicationUrl %>"
+                           style="background:#124370; font-weight:500;display: inline-block; border-radius:4px; color:#fff; margin-right: 7px; padding:8px 18px; font-size:14px; text-decoration:none; border-color: #124370;">Redirect to App</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="26"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                    <td colspan="2" height="20"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" height="20"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+</table>
+</body>
+</html>
+

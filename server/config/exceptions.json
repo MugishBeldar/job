@@ -1,0 +1,296 @@
+{
+	"ValidationError":{
+		"name":"ValidationError",
+		"code":"4001",
+		"Message":"The parameters passed to the API call are invalid, parameters that caused the problem are \"{parameters}\"",
+		"http_code":"400",
+		"send_notification":"false"
+	},
+	"AuthorizationFailed":{
+		"name":"AuthorizationFailed",
+		"code":"4002",
+		"Message":"The provided Access Key Or Secret Key is invalid",
+		"http_code":"401",
+		"send_notification":"false"
+	},
+	"SessionExpired":{
+		"name":"SessionExpired",
+		"code":"4003",
+		"Message":"Users session expired",
+		"http_code":"401",
+		"send_notification":"false"
+	},
+	"InvalidAuthRequest":{
+		"name":"InvalidOAuthRequest",
+		"code":"4004",
+		"Message":"Invalid oAuth Header, \"{message}\"",
+		"http_code":"401",
+		"send_notification":"false"
+	},
+	"ObjectNotFound":{
+		"name":"ObjectNotFound",
+		"code":"4005",
+		"Message":"Object not found",
+		"http_code":"404",
+		"send_notification":"false"
+	},
+	"AuthenticationFailed":{
+		"name": "AuthenticationFailed",
+		"code":"4006",
+		"Message": "Email or Password is invalid",
+		"http_code":"401",
+		"send_notification":"false"
+	},
+	"DuplicateEntry":{
+		"name": "DuplicateEntry",
+		"code":"4007",
+		"Message": "{message}",
+		"http_code":"400",
+		"send_notification":"false"
+	},
+	"CanNotDelete":{
+		"name": "CanNotDelete",
+		"code":"4008",
+		"Message": "Cannot delete request object",
+		"http_code":"400",
+		"send_notification":"false"
+	},
+	"Forbidden":{
+		"name": "Forbidden",
+		"code":"4009",
+		"Message": "Operation not allowed",
+		"http_code":"403",
+		"send_notification":"false"
+	},
+	"APILimitReached":{
+		"name": "APILimitReached",
+		"code":"4009",
+		"Message": "You have reached your allowed API Call limit of {limit} calls/hour",
+		"http_code":"400",
+		"send_notification":"false"
+	},
+	"InvitationAlreadyAccepted":{
+		"name": "InvitationAlreadyAccepted",
+		"code":"4010",
+		"Message": "User has already accepted the invitation",
+		"http_code":"400",
+		"send_notification":"false"
+	},
+	"ForgotPasswordLinkExpired":{
+		"name": "ForgotPasswordLinkExpired",
+		"code":"4010",
+		"Message": "Your forgot password link has expired, please try requesting new link again",
+		"http_code":"400",
+		"send_notification":"false"
+	},
+	"MigrationFailed":{
+		"name": "MigrationFailed",
+		"code":"5001",
+		"Message": "{message}",
+		"http_code":"500",
+		"send_notification":"true"
+	},
+	"DBConnectionFailed":{
+		"name": "DBConnectionFailed",
+		"code":"5002",
+		"Message": "{message}",
+		"http_code":"500",
+		"send_notification":"true"
+	},
+	"DBError":{
+		"name": "DBError",
+		"code":"5003",
+		"Message": "{message}",
+		"http_code":"500",
+		"send_notification":"true"
+	},
+	"GeneralError":{
+		"name": "GeneralError",
+		"code":"5004",
+		"Message": "I'm sorry, something went wrong on our end. If it happens again send us feedback and we will get back to you asap.",
+		"http_code":"500",
+		"send_notification":"true"
+	},
+	"FileUploadFailed":{
+		"name": "FileUploadFailed",
+		"code":"5005",
+		"Message": "Error uploading file.",
+		"http_code":"500",
+		"send_notification":"true"
+	},
+	"SMTPFailed":{
+		"name": "SMTPFailed",
+		"code":"5006",
+		"Message": "SMTP Connection failed",
+		"http_code":"500",
+		"send_notification":"false"
+	},
+	"SMTPFatalError450":{
+		"name": "InvalidRecipient",
+		"code": "4011",
+		"Message": "The Recipient's mailbox is unavailable. The mailbox has been corrupted or placed on an offline server, or your email hasn't been accepted for IP problems or blacklisting.",
+		"http_code": "450",
+		"send_notification":"false"
+	},
+	"SMTPFatalError451":{
+		"name": "ServerMisconfiguration",
+		"code": "4012",
+		"Message": "There is a configration error with our servers. Please try agian later",
+		"http_code": "451",
+		"send_notification":"false"
+	},
+	"SMTPFatalError452":{
+		"name": "TooManyRecipient",
+		"code": "4013",
+		"Message": "Recipients are more than 50 including To, Cc, Bcc",
+		"http_code": "452",
+		"send_notification":"false"
+	},
+	"SMTPFatalError535":{
+		"name": "AuthenticationProblem",
+		"code": "5007",
+		"Message": "Incorrect username or password",
+		"http_code": "535",
+		"send_notification":"false"
+	},
+	"SMTPFatalError550":{
+		"name": "UnknownRecipient",
+		"code": "5008",
+		"Message": "Recipient doesn't exist.",
+		"http_code": "550",
+		"send_notification":"false"
+	},
+	"SMTPFatalError551":{
+		"name": "SpamMail",
+		"code": "5009",
+		"Message": "Classified as Spam Mail. Please contact your ISP to send mail.",
+		"http_code": "551",
+		"send_notification":"false"
+	},
+	"SMTPFatalError553":{
+		"name": "InvalidMailbox",
+		"code": "5010",
+		"Message": "Name of Mailbox is invalid.",
+		"http_code": "553",
+		"send_notification":"false"
+	},
+	"SMTPFatalError554":{
+		"name": "TransactionFailed",
+		"code": "5011",
+		"Message": "Transaction Failed. Your IP may be blacklisted by server.",
+		"http_code": "554",
+		"send_notification":"false"
+	},
+	"PaymentFailedError":{
+		"name": "PaymentFailed",
+		"code": "5012",
+		"Message": "Payment Failed",
+		"http_code": "402",
+		"send_notification":"false"
+	},
+	"DoesnotExistsError":{
+		"name": "DoesnotExistsError",
+		"code": "5013",
+		"Message": "doesnot Exists",
+		"http_code": "402",
+		"send_notification":"false"
+	},
+	"SubscriptionExpired":{
+		"name": "SubscriptionExpired",
+		"code": "5014",
+		"Message": "Your subscription has been expired.",
+		"http_code": "402",
+		"send_notification":"false"
+	},
+	"SubscriptionTrialExpired":{
+		"name": "SubscriptionTrialExpired",
+		"code": "5015",
+		"Message": "Your days trial period has been expired.",
+		"http_code": "402",
+		"send_notification":"false"
+	},
+	"Maintenance":{
+		"name":"Maintenance",
+		"code":"5016",
+		"Message":"",
+		"http_code":"503",
+		"send_notification":"false"
+	},
+	"Migrating":{
+		"name":"Migrating",
+		"code":"5017",
+		"Message":"New features are coming, your salesmate will be live very soon.",
+		"http_code":"503",
+		"send_notification":"false"
+	},
+	"InValidGrant":{
+		"name":"InValidGrant",
+		"code":"5018",
+		"Message":"Token has been revoked",
+		"http_code":"503",
+		"send_notification":"false"
+	},
+	"authentication_failed":{
+		"name":"AuthenticationProblem",
+		"code":"5007",
+		"Message":"Username or Password is invalid",
+		"http_code":"535",
+		"send_notification":"false"
+	},
+	"invalid_request_error":{
+		"name":"SMTPFailed",
+		"code":"5006",
+		"Message":"SMTP Connection failed",
+		"http_code":"400",
+		"send_notification":"false"
+	},
+    "insufficient_balance":{
+		"name":"InsufficientBalance",
+		"code":"5019",
+		"Message":"Not enough balance",
+		"http_code":"503",
+		"send_notification":"false"
+	},
+    "number_released":{
+		"name":"NumberReleased",
+		"code":"5020",
+		"Message":"Number released",
+		"http_code":"503",
+		"send_notification":"false"
+	},
+	"twilio_error":{
+		"name":"TwilioError",
+        "code":"5021",
+        "Message":"Error in sending message",
+        "http_code":"503",
+        "send_notification":"false"
+	},
+    "message_failed_on_invalid_number":{
+		"name":"MessageFailedOnInvalidNumber",
+		"code":"5022",
+		"Message":"'To' number is not a valid mobile number",
+		"http_code":"503",
+		"send_notification":"false"
+	},
+	"UnderMaintenance":{
+		"code": "5016",
+		"name": "UnderMaintenance",
+		"Message": "The server is currently unable to handle the request due to a temporary maintenance of the server."
+	},
+	"RouteNotFound":{
+		"http_code":404,
+		"code": "5023",
+		"name": "RouteNotFound",
+		"Message": "No such route found."
+	},
+	"PartialUpdate":{
+		"code": "5024",
+		"name": "PartialUpdate",
+		"Message": "Your request to update the records is partially done. Check fields you are updating and try again."
+	},
+	"PartialDelete":{
+		"code": "5025",
+		"name": "PartialDelete",
+		"Message": "Your request to delete the records is partially done. Check records you are updating and try again."
+	}
+}
